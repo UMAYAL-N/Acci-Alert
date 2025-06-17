@@ -138,24 +138,24 @@ def check_for_accident(video_path):
     while True:
         ret, frame = cap.read()
         if not ret:
-            print("End of video or unable to read video frame.")
+            #print("End of video or unable to read video frame.")
             break
         if last_frame is not None:
             diff = cv2.absdiff(last_frame, frame)
             non_zero_count = cv2.countNonZero(cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY))
-            print(f"Non-zero pixel count: {non_zero_count}")
+            #print(f"Non-zero pixel count: {non_zero_count}")
 
             if non_zero_count < 100000:  # Threshold for detecting movement
                 no_movement_duration += 1
-                print(f"No movement detected for {no_movement_duration} frames.")
+                #print(f"No movement detected for {no_movement_duration} frames.")
                 
                 if no_movement_duration >10:  # Check for 10 seconds (assuming 3 fps)
-                    print("No movement detected for 10 seconds. Accident suspected.")
+                    #print("No movement detected for 10 seconds. Accident suspected.")
                     accident_detected = True
                     break
             else:
                 no_movement_duration = 0
-                print("Movement detected, resetting no movement counter.")
+                #print("Movement detected, resetting no movement counter.")
         last_frame = frame
     cap.release()
     if accident_detected:
