@@ -47,6 +47,7 @@ accialert/
 ├── case3vad.mp4          # Accident video - Scenario 3 (Accident Detected)
 ├── caseAvnad.mp4         # Normal video - No Accident Detected (A)
 ├── caseBvnad.mp4         # Normal video - No Accident Detected (B)
+├── caseivadmnd.mp4       # Accident with movement detected (victim is active or people in the area helped the victim) - so no need of emergency services
 ├── storage.csv           # Log file storing accident records (date, time, location, video)
 └── README.md             # Project overview and usage instructions
 
